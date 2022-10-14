@@ -51,8 +51,7 @@ class UiSpec(IUispec):
     def insert_image(self, dio_filepath: str):
         filename = os.path.basename(dio_filepath)
         filename = filename.replace('.drawio', '.png', 1)
-        drawio_exacutable = os.environ['DRAW_IO_PATH']
-        os.system('{} -x -f jpg -o {}/{} {}'.format(os.getenv('DRAWIO_EXECUTABLE'), os.getenv('TMP_DIR'), filename, dio_filepath))
+        os.system('{} -x -f jpg -o {}/{} {}'.format(os.getenv('DRAW_IO_EXECUTABLE'), os.getenv('TMP_DIR'), filename, dio_filepath))
         self.sheet.insert_image('A12', '{}/{}'.format(os.getenv('TMP_DIR'), filename), {'x_scale': 0.5, 'y_scale': 0.5})
 
     def set_footer(self, component_info_list: List[ComponentInfo]):
