@@ -21,7 +21,7 @@ for file in files:
         mxfile.diagram[0].value = uid.set_numbering()
 
         fileid = uuid.uuid4()
-        diofile_path = '{}/{}.drwaio'.format(os.getenv('TMP_DIR'), fileid)
+        diofile_path = '{}/{}.drawio'.format(os.getenv('TMP_DIR'), fileid)
         mxfile.write(diofile_path)
         uispec = UiSpec('./output/{}.xlsx'.format(fileid))
         uispec.set_header()
