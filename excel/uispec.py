@@ -52,8 +52,8 @@ class UiSpec(IUispec):
         filename = os.path.basename(dio_filepath)
         filename = filename.replace('.drawio', '.png', 1)
         drawio_exacutable = os.environ['DRAW_IO_PATH']
-        os.system('{}/draw.io -x -f jpg -o /tmp/{} {}'.format(drawio_exacutable, filename, dio_filepath))
-        self.sheet.insert_image('A12', '/tmp/{}'.format(filename), {'x_scale': 0.5, 'y_scale': 0.5})
+        os.system('{} -x -f jpg -o {}/{} {}'.format(os.getenv('DRAWIO_EXECUTABLE'), os.getenv('TMP_DIR'), filename, dio_filepath))
+        self.sheet.insert_image('A12', '{}/{}'.format(os.getenv('TMP_DIR'), filename), {'x_scale': 0.5, 'y_scale': 0.5})
 
     def set_footer(self, component_info_list: List[ComponentInfo]):
         self.sheet.merge_range('A45:I45', '使用する部品', self.header_bg)
