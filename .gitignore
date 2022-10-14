@@ -1,0 +1,7 @@
+.vscode
+venv
+output/*.xlsx
+!output/.gitkeep
+**/**/__pycache__
+input/*.drawio
+!input/.gitkeep

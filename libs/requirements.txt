@@ -1,0 +1,5 @@
+Jedi
+build
+xlsxwriter
+python-dotenv
+pydrawio==1.1.0
